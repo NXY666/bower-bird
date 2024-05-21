@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8"/>
+	<title>园丁鸟</title>
+	<link href="popup.css" rel="stylesheet"/>
+	<script src="popup.js" type="module"></script>
+</head>
+<body>
+	<div style="display: flex; margin: 5px; align-items: center; gap: 10px;">
+		<img alt="" src="/icons/icon.png" style="height: 35px;">
+		<h2 style="color: var(--primary-color-1);">园丁鸟</h2>
+		<button id="extension-options-button" style="margin-left: auto;">管理</button>
+	</div>
+	<div id="safety-alert" class="box error" style="display: none;">
+		Chrome 正在保护此页面，某些功能可能无法在该页面上使用。
+	</div>
+	<div class="box">
+		<div class="box-title">脚本</div>
+		<select id="script-select" style="width: 100%; margin-bottom: 10px;"></select>
+		<div style="display: flex; gap: 10px;">
+			<button id="script-edit-button" style="flex: 1;">编辑</button>
+			<button id="script-execute-button" style="flex: 1;">运行</button>
+		</div>
+	</div>
+	<div class="box">
+		<div class="box-title">宏</div>
+		<select id="macro-select" style="width: 100%; margin-bottom: 10px;"></select>
+		<div style="display: flex; gap: 10px;">
+			<button id="macro-record-button" style="flex: 1;">录制</button>
+			<button id="macro-execute-button" style="flex: 1;">运行</button>
+			<button id="macro-stop-record-button" style="flex: 1; display: none;">结束录制</button>
+		</div>
+	</div>
+	<div class="box">
+		<div class="box-title">元素</div>
+		<div style="display: flex; gap: 10px;">
+			<button id="element-capture-button" style="flex: 1;">捕获</button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+:root {
+	--color: black;
+
+	--primary-color-1: #0B57D0;
+	--primary-color-2: #649CF5;
+	--primary-color-3: #BBD3FA;
+
+	--text-color-1: #333333;
+	--text-color-2: #606266;
+	--text-color-3: #C0C4CC;
+
+	--error-color-1: #BA1A1A;
+	--error-color-2: #D61E1E;
+
+	--background-color-1: #FFFFFF;
+	--background-color-2: #F6F8FA;
+	--background-color-3: #E6EBF2;
+
+	--error-background-color: #FFDAD6;
+
+	--border-color: #DCDFE6;
+	--border-hover-color: #C8C9CC;
+	--border-active-color: #CDD0D6;
+
+	--form-color: var(--text-color-2);
+	--form-input-color: var(--color);
+	--form-error-color: var(--error-color-1);
+	--form-border-color: var(--border-color);
+	--form-border-hover-color: var(--border-hover-color);
+	--form-border-active-color: var(--border-active-color);
+	--form-background-color: var(--background-color-1);
+	--form-background-hover-color: var(--background-color-2);
+	--form-background-active-color: var(--background-color-3);
+	--form-background-error-color: var(--error-background-color);
+
+	--form-box-shadow: 0 1px 1px #1F1F1F0A;
+	--form-box-shadow-active: inset 0 1px 1px #CDD0D6;
+
+	--short-transition-duration: 0.1s;
+	--base-transition-duration: 0.3s;
+	--long-transition-duration: 0.5s;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color: white;
+
+		--primary-color-1: #B2C5FF;
+		--primary-color-2: #80A4FF;
+		--primary-color-3: #5983FF;
+
+		--text-color-1: #E1E2EC;
+		--text-color-2: #C3C6D6;
+		--text-color-3: #424654;
+
+		--error-color-1: #FFDAD6;
+		--error-color-2: #FFB4AB;
+
+		--background-color-1: #1D1F27;
+		--background-color-2: #191B23;
+		--background-color-3: #11131A;
+
+		--error-background-color: #690005;
+
+		--border-color: #3C4043;
+		--border-hover-color: #8B949E;
+		--border-active-color: #6E7681;
+		--form-box-shadow: 0 1px 1px #E0E0E00A;
+		--form-box-shadow-active: inset 0 1px 1px #322F29;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+
+body {
+	color: var(--color);
+	letter-spacing: 0.025em;
+}
+
+button {
+	font-size: 14px;
+	line-height: 1;
+	height: 30px;
+	padding: 0 15px;
+	cursor: pointer;
+	user-select: none;
+	transition: background-color var(--short-transition-duration), border-color var(--short-transition-duration), box-shadow var(--short-transition-duration);
+	color: var(--form-color);
+	border: 1px solid var(--form-border-color);
+	border-radius: 5px;
+	outline-color: var(--primary-color-1);
+	background-color: var(--form-background-color);
+	box-shadow: var(--form-box-shadow);
+}
+
+button:hover {
+	border-color: var(--form-border-hover-color);
+	background-color: var(--form-background-hover-color);
+}
+
+button:active {
+	border-color: var(--form-border-active-color);
+	background-color: var(--form-background-active-color);
+	box-shadow: var(--form-box-shadow-active)
+}
+
+button:disabled {
+	pointer-events: none;
+	opacity: 0.6;
+}
+
+select {
+	font-family: system-ui, 'Microsoft YaHei UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	padding: 5px;
+	transition: border-color var(--short-transition-duration), box-shadow var(--short-transition-duration);
+	color: var(--form-input-color);
+	border: var(--form-border-color) 1px solid;
+	border-radius: 5px;
+	outline: none;
+	background-color: var(--form-background-color);
+}
+
+select:focus {
+	border-color: var(--primary-color-1);
+	box-shadow: 0 0 0 1px var(--primary-color-1) inset;
+}
+
+select:disabled {
+	pointer-events: none;
+	opacity: 0.6;
+}
+
+input:not([type=checkbox]):not([type=radio]), textarea {
+	font-family: system-ui, 'Microsoft YaHei UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	padding: 5px 10px;
+	transition: border-color var(--short-transition-duration), box-shadow var(--short-transition-duration);
+	color: var(--form-input-color);
+	border: var(--form-border-color) 1px solid;
+	border-radius: 5px;
+	outline: none;
+	background-color: var(--form-background-color);
+}
+
+input:focus:not([type=checkbox]):not([type=radio]),
+textarea:focus {
+	border-color: var(--primary-color-1);
+	box-shadow: 0 0 0 1px var(--primary-color-1) inset;
+}
+
+label {
+	font-size: 14px;
+	color: var(--form-color);
+}
+
+label.required::before {
+	margin-right: 0.125em;
+	content: '*';
+	color: var(--form-error-color);
+}
+
+.related-resources-title {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.text-ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8"/>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+	<title>导出脚本</title>
+	<link href="export.scss">
+	<script src="export.js" type="module"></script>
+</head>
+
+<body>
+	<div class="left-bar">
+		<div class="title-bar">
+			<span class="title">导出脚本</span>
+			<span id="subtitle" class="subtitle"></span>
+		</div>
+	</div>
+	<form id="export-form" class="right-bar">
+		<div class="export-warning">
+			导出前请检查脚本内容及其引用的资源，避免泄露隐私信息。
+		</div>
+		<label class="required" for="script-select">脚本</label>
+		<select id="script-select" required></select>
+		<div class="operate-button-group">
+			<button id="export-cancel" type="button">取消</button>
+			<button id="export-script" type="submit">导出</button>
+		</div>
+	</form>
+</body>
+</html>

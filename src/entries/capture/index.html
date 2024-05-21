@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8"/>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+	<title>捕获元素</title>
+	<link href="capture.scss">
+	<script src="capture.js" type="module"></script>
+</head>
+
+<body>
+	<div class="left-bar">
+		<div class="title-bar">
+			<span class="title">已捕获元素</span>
+			<span class="subtitle">请保存或遗弃它</span>
+		</div>
+		<div class="element-screenshot-container">
+			<img id="element-screenshot" alt="screenshot"/>
+		</div>
+	</div>
+	<form id="element-form" class="right-bar">
+		<label class="required" for="element-name">名称</label>
+		<input id="element-name" required/>
+		<label for="element-description">描述</label>
+		<textarea id="element-description"></textarea>
+		<div class="operate-button-group">
+			<button id="capture-recapture" type="reset">重选</button>
+			<button id="capture-cancel" type="button">取消</button>
+			<button id="capture-save" type="submit">保存</button>
+		</div>
+	</form>
+</body>
+</html>
