@@ -1,0 +1,34 @@
+@import url('&/assets/css/custom-common.css');
+
+body {
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: var(--body-width);
+	height: auto;
+	padding: 10px;
+	background-color: var(--background-color-2);
+	gap: 10px;
+
+	--body-width: 300px;
+}
+
+.box {
+	width: 100%;
+	padding: 15px;
+	border-radius: 5px;
+	background-color: var(--background-color-1);
+}
+
+.box.error {
+	color: var(--error-color-1);
+	background-color: var(--error-background-color);
+}
+
+.box-title {
+	font-size: 12px;
+	line-height: 1;
+	margin-bottom: 10px;
+	color: gray;
+}

@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"rootDir": "./src",
+		"moduleResolution": "node",
+		"paths": {
+			"&/*": [
+				"src/*"
+			],
+			"@/*": [
+				"src/entries/*"
+			],
+			"@OPT/*": [
+				"src/entries/options/*"
+			],
+			"@POP/*": [
+				"src/entries/popup/*"
+			],
+			"@OFF/*": [
+				"src/entries/offscreen/*"
+			]
+		}
+	}
+}
