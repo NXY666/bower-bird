@@ -10,6 +10,7 @@ export default defineConfig({
 	srcDir: 'src',
 	publicDir: 'public',
 	entrypointsDir: 'entries',
+	modulesDir: 'wxt-modules',
 	browser: 'chrome',
 	manifest: {
 		name: "园丁鸟",
@@ -58,5 +59,5 @@ export default defineConfig({
 		build: {
 			target: ['chrome120', 'edge120'],
 		}
-	}),
+	})
 });
