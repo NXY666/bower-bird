@@ -7,10 +7,10 @@
 					start: blockInst.isStartBlock,
 					end: blockInst.isEndBlock,
 					last: blockInst.layerList.length - index === 1
-				}" :style="{background: layer.getColor(isDark)}" class="stick"/>
+				}" :style="{background: layer.getBgColor(isDark)}" class="stick"/>
 			<div class="detail">
 				<placeholder :active="topActive" :class="{end:blockInst.isEndBlock}" class="placeholder"/>
-				<div :style="{background: blockInst.getColor(isDark)}" class="block-info" draggable="true"
+				<div :style="{background: blockInst.getBgColor(isDark)}" class="block-info" draggable="true"
 					 @dragstart="dragStart">
 					<div class="block-title text-ellipsis">{{ blockInst.title }}</div>
 					<div class="block-description text-ellipsis" v-html="blockInst.description"/>

@@ -267,16 +267,31 @@ export class Block {
 		return "Default Block Description";
 	}
 
-	get lightColor(): string {
-		return "var(--el-bg-color)";
+
+	get lightTheme() {
+		return {
+			color: "var(--el-bg-color)",
+			bgColor: "var(--el-bg-color)",
+		};
 	}
 
-	get darkColor(): string {
-		return "var(--base-color-info-dark-7)";
+	get darkTheme() {
+		return {
+			color: "var(--base-color-info-dark-7)",
+			bgColor: "var(--base-color-info-dark-7)",
+		};
+	}
+
+	getTheme(isDark: boolean) {
+		return isDark ? this.darkTheme : this.lightTheme;
 	}
 
 	getColor(isDark: boolean) {
-		return isDark ? this.darkColor : this.lightColor;
+		return isDark ? this.darkTheme.color : this.lightTheme.color;
+	}
+
+	getBgColor(isDark: boolean) {
+		return isDark ? this.darkTheme.bgColor : this.lightTheme.bgColor;
 	}
 
 	private _parent: Block;
@@ -1515,12 +1530,18 @@ export class IfBlock extends Block {
 		return "可惜没如果";
 	}
 
-	get lightColor() {
-		return "#CCFFFF";
+	get lightTheme() {
+		return {
+			color: "hwb(195 80% 0%)",
+			bgColor: "linear-gradient(to right, hwb(195 80% 0%) 20px, hwb(195 70% 0%))"
+		};
 	}
 
-	get darkColor() {
-		return "#38494C";
+	get darkTheme() {
+		return {
+			color: "hwb(200 0% 50%)",
+			bgColor: "linear-gradient(to right, hwb(200 0% 50%) 20px, hwb(200 10% 30%))"
+		};
 	}
 
 	get endIfBlock() {
@@ -1860,12 +1881,18 @@ export class ElseBlock extends Block {
 		super();
 	}
 
-	get lightColor() {
-		return "#CCFFFF";
+	get lightTheme() {
+		return {
+			color: "hwb(195 80% 0%)",
+			bgColor: "linear-gradient(to right, hwb(195 80% 0%) 20px, hwb(195 70% 0%))"
+		};
 	}
 
-	get darkColor() {
-		return "#38494C";
+	get darkTheme() {
+		return {
+			color: "hwb(200 0% 50%)",
+			bgColor: "linear-gradient(to right, hwb(200 0% 50%) 20px, hwb(200 10% 30%))"
+		};
 	}
 
 	get description() {
@@ -1904,12 +1931,12 @@ export class EndIfBlock extends Block {
 		this._ifBlock = ifBlock;
 	}
 
-	get lightColor() {
-		return "#CCFFFF";
+	get lightTheme() {
+		return this._ifBlock?.lightTheme ?? super.lightTheme;
 	}
 
-	get darkColor() {
-		return "#38494C";
+	get darkTheme() {
+		return this._ifBlock?.darkTheme ?? super.darkTheme;
 	}
 
 	get title() {
@@ -1996,12 +2023,18 @@ export class LoopBlock extends Block {
 		return "循环执行内部块直到终止";
 	}
 
-	get lightColor() {
-		return "#FFFFCC";
+	get lightTheme() {
+		return {
+			color: "hwb(300 85% 0%)",
+			bgColor: "linear-gradient(to right, hwb(300 85% 0%) 20px, hwb(300 75% 0%))"
+		};
 	}
 
-	get darkColor() {
-		return "#4C4838";
+	get darkTheme() {
+		return {
+			color: "hwb(300 0% 50%)",
+			bgColor: "linear-gradient(to right, hwb(300 12% 55%) 20px, hwb(300 12% 30%))"
+		};
 	}
 
 	get endLoopBlock() {
@@ -2069,12 +2102,12 @@ export class EndLoopBlock extends Block {
 		return "";
 	}
 
-	get lightColor() {
-		return "#FFFFCC";
+	get lightTheme() {
+		return this._loopBlock?.lightTheme ?? super.lightTheme;
 	}
 
-	get darkColor() {
-		return "#4C4838";
+	get darkTheme() {
+		return this._loopBlock?.darkTheme ?? super.darkTheme;
 	}
 
 	get loopBlock() {
@@ -2154,12 +2187,18 @@ export class BreakBlock extends Block {
 		}
 	}
 
-	get lightColor() {
-		return "#FFFFCC";
+	get lightTheme() {
+		return {
+			color: "hwb(300 85% 0%)",
+			bgColor: "linear-gradient(to right, hwb(300 85% 0%) 20px, hwb(300 75% 0%))"
+		};
 	}
 
-	get darkColor() {
-		return "#4C4838";
+	get darkTheme() {
+		return {
+			color: "hwb(300 0% 50%)",
+			bgColor: "linear-gradient(to right, hwb(300 12% 55%) 20px, hwb(300 12% 30%))"
+		};
 	}
 
 	toScript() {
@@ -2204,12 +2243,18 @@ export class ContinueBlock extends Block {
 		}
 	}
 
-	get lightColor() {
-		return "#FFFFCC";
+	get lightTheme() {
+		return {
+			color: "hwb(300 85% 0%)",
+			bgColor: "linear-gradient(to right, hwb(300 85% 0%) 20px, hwb(300 75% 0%))"
+		};
 	}
 
-	get darkColor() {
-		return "#4C4838";
+	get darkTheme() {
+		return {
+			color: "hwb(300 0% 50%)",
+			bgColor: "linear-gradient(to right, hwb(300 12% 55%) 20px, hwb(300 12% 30%))"
+		};
 	}
 
 	toScript() {
@@ -2243,12 +2288,18 @@ export class ExitBlock extends Block {
 		return "停止脚本的运行";
 	}
 
-	get lightColor() {
-		return "#FFCCCC";
+	get lightTheme() {
+		return {
+			color: "hwb(10 90% 0%)",
+			bgColor: "linear-gradient(to right, hwb(10 85% 0%) 20px, hwb(10 75% 0%))"
+		};
 	}
 
-	get darkColor() {
-		return "#4C3838";
+	get darkTheme() {
+		return {
+			color: "hwb(5 12% 55%)",
+			bgColor: "linear-gradient(to right, hwb(5 12% 55%) 20px, hwb(5 12% 30%))"
+		};
 	}
 
 	toScript() {
