@@ -241,6 +241,10 @@ export default {
   .content {
     flex: 1;
     width: -webkit-fill-available;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--el-bg-color);
+    }
   }
 }
 </style>

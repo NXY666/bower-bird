@@ -267,7 +267,6 @@ export class Block {
 		return "Default Block Description";
 	}
 
-
 	get lightTheme() {
 		return {
 			color: "var(--el-bg-color)",
@@ -278,7 +277,7 @@ export class Block {
 	get darkTheme() {
 		return {
 			color: "var(--base-color-info-dark-7)",
-			bgColor: "var(--base-color-info-dark-7)",
+			bgColor: "linear-gradient(90deg, var(--base-color-info-dark-8), var(--base-color-info-dark-6))",
 		};
 	}
 
@@ -2032,7 +2031,7 @@ export class LoopBlock extends Block {
 
 	get darkTheme() {
 		return {
-			color: "hwb(300 0% 50%)",
+			color: "hwb(300 12% 55%)",
 			bgColor: "linear-gradient(to right, hwb(300 12% 55%) 20px, hwb(300 12% 30%))"
 		};
 	}

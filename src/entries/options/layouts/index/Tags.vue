@@ -124,6 +124,10 @@ export default {
 .tags-container {
 	padding: 6px 5px;
 	background: var(--base-color-primary-dark-9);
+
+	@media (prefers-color-scheme: dark) {
+		background: var(--base-color-night-primary-dark-9);
+	}
 }
 
 .tags-container .tags-item-list {

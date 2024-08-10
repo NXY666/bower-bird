@@ -459,6 +459,11 @@ export default {
   right: 0;
   pointer-events: none;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.04);
+
+  @media (prefers-color-scheme: dark) {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+    border-left: 1px solid var(--el-border-color-lighter);
+  }
 }
 
 .block-list {

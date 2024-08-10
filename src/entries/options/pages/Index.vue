@@ -51,7 +51,6 @@ export default {
 			settingDialog: false,
 			menu: [],
 			nextMenu: [],
-			pmenu: {},
 			active: ''
 		};
 	},
@@ -128,6 +127,12 @@ export default {
     flex-shrink: 0;
     width: 75px;
     background: var(--base-color-primary-dark-9);
+
+    @media (prefers-color-scheme: dark) {
+      & {
+        background: var(--base-color-night-primary-dark-9);
+      }
+    }
 
     .logo-container {
       height: 45px;
@@ -234,6 +239,10 @@ export default {
       z-index: 1032;
       fill: var(--base-color-primary-dark-9);
       pointer-events: none;
+
+      @media (prefers-color-scheme: dark) {
+        fill: var(--base-color-night-primary-dark-9);
+      }
     }
 
     :deep(.main-content) {
